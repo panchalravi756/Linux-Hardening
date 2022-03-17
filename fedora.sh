@@ -9,6 +9,8 @@ yum update -y
 
 # Install fail2ban
 yum install fail2ban -y
+systemctl enable fail2ban
+systemctl start fail2ban
 
 # update golang optional
 rm -rf /usr/local/go
