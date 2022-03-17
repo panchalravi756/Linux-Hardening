@@ -7,3 +7,7 @@ fi
 if [ -f /etc/fedora-release ]; then
      bash fedora.sh
 fi
+
+if [ -f /etc/redhat-release ]; then
+     bash redhat.sh
+fi
