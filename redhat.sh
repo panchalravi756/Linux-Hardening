@@ -3,6 +3,7 @@
 # updating patch & dependencies
 yum install wget sed git -y
 yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum update -y
 yum install ufw -y
 
