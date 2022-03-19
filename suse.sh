@@ -36,9 +36,16 @@ wget -q -c https://raw.githubusercontent.com/conduro/ubuntu/main/sysctl.conf -O 
 # wget -q -c https://raw.githubusercontent.com/conduro/ubuntu/main/sshd.conf -O /etc/ssh/sshd_config
 
 # configure firewall
-firewall-cmd --runtime-to-permanent
-firewall-cmd --reload
-systemctl reload firewalld
+ufw disable
+echo "y" | sudo ufw reset
+ufw logging off
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 80/tcp
+ufw allow 443/tcp
+
+# defaults to port 22
+ufw allow 22/tcp
 
 # free disk space
 find /var/log -type f -delete
@@ -47,5 +54,5 @@ rm -rf /usr/share/man/*
 # reload system
 sysctl -p
 systemctl restart systemd-timesyncd
-systemctl disable firewalld
+ufw --force disable
 service sshd restart
