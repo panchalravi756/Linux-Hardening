@@ -16,6 +16,6 @@ if [ -f /etc/centos-release ]; then
      bash centos.sh
 fi
 
-if [ -f /etc/sles-release ]; then
+if [ -f /etc/SLES-release ]; then
      bash suse.sh
 fi
