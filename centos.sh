@@ -1,4 +1,5 @@
 # Centos Linux Hardening
+echo "Running Centos Script"
 # Script works only for centos-7
 
 # updating patch & dependencies
