@@ -1,5 +1,5 @@
 # SUSE Linux Hardening
-echo "SuSe Linux"
+echo "Running SUSE Script"
 
 # update dependencies
 sudo zypper install wget sed git
