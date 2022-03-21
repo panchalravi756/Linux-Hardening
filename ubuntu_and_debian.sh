@@ -61,3 +61,5 @@ update-grub2
 systemctl restart systemd-timesyncd
 ufw --force disable
 service ssh restart
+
+sudo bash apache-hardening.sh
