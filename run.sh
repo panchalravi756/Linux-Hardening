@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f /etc/lsb-release ]; then
-    bash ubuntu.sh
+    bash ubuntu_and_debian.sh
 fi
 
 if [ -f /etc/fedora-release ]; then
