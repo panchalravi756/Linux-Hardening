@@ -1,4 +1,5 @@
 # Centos Linux Hardening
+# Script works only for centos-7
 
 # updating patch & dependencies
 yum install wget sed git -y
