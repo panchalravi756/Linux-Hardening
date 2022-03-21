@@ -1,6 +1,10 @@
 #!/bin/bash
 
-if [ -f /etc/lsb-release ]; then
+if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
+    bash ubuntu_and_debian.sh
+fi
+
+if [ "$(. /etc/os-release; echo $NAME)" = "Debian" ]; then
     bash ubuntu_and_debian.sh
 fi
 
