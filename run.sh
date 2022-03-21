@@ -20,7 +20,7 @@ if [ -f /etc/centos-release ]; then
      bash centos.sh
 fi
 
-if [ -f /etc/SuSE-release ]; then
+if [ "$(. /etc/os-release; echo $NAME)" = "SLES" ]; then
      bash suse.sh
 fi
 
