@@ -4,20 +4,20 @@ if [ -f /etc/lsb-release ]; then
     bash ubuntu.sh
 fi
 
-if [ -f /etc/fedora-release ]; then
+elif [ -f /etc/fedora-release ]; then
      bash fedora.sh
 fi
 
-if [ -f /etc/redhat-release ]; then
+elif [ -f /etc/redhat-release ]; then
      bash redhat.sh
 fi
 
-if [ -f /etc/centos-release ]; then
+elif [ -f /etc/centos-release ]; then
      bash centos.sh
 fi
 
-if [ -f /etc/os-release ]; then
-     bash centos.sh
+elif [ -f /etc/SuSE-release ] ; then
+     bash suse.sh
 fi
 
 
