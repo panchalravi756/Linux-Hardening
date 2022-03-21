@@ -297,4 +297,4 @@ function apache_harden {
     systemctl start apache2
 }
 
-linux_harden
+apache_harden
