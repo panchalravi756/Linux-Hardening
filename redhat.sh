@@ -66,7 +66,7 @@ yum autoremove -y
 
 # reload system
 sysctl -p
-yum install systemd-timesyncd
+yum install systemd-timesyncd -y
 ufw --force disable
 
 if   grep -q -i "release 8" /etc/redhat-release ; then
