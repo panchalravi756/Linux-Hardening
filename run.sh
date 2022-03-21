@@ -16,3 +16,9 @@ if [ -f /etc/centos-release ]; then
      bash centos.sh
 fi
 
+if [ -f /etc/os-release ]; then
+     bash centos.sh
+fi
+
+
+
