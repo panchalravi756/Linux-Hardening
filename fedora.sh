@@ -1,4 +1,5 @@
 # Fedora Linux Hardening
+echo "Running Fedora Script"
 
 # update dependencies
 yum install wget sed git -y
