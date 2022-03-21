@@ -1,4 +1,5 @@
 # Ubuntu Linux Hardening
+echo "Running Ubuntu and Debian Script"
 
 # update dependencies
 apt-get install wget sed git -y
