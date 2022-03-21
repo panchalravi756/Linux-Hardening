@@ -1,9 +1,20 @@
 # Redhat Linux Hardening
-
+echo "Running RedHat Script"
 # updating patch & dependencies
 yum install wget sed git -y
-yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
-sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+if   grep -q -i "release 8" /etc/redhat-release ; then
+  echo "Running RHEL-8"
+  sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+elif grep -q -i "release 7" /etc/redhat-release ; then
+  echo "Running RHEL-7"
+  sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+elif grep -q -i "release 6" /etc/redhat-release ; then
+  echo "Running RHEL-6"
+  sudo wget https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
+  rpm -Uvh epel-release-6*.rpm
+fi
+
 yum update -y
 yum install ufw -y
 
@@ -56,6 +67,15 @@ yum autoremove -y
 # reload system
 sysctl -p
 yum install systemd-timesyncd
-systemctl restart systemd-timesyncd
 ufw --force disable
-systemctl restart sshd
+
+if   grep -q -i "release 8" /etc/redhat-release ; then
+  systemctl restart systemd-timesyncd
+  systemctl restart sshd
+elif grep -q -i "release 7" /etc/redhat-release ; then
+  systemctl restart systemd-timesyncd
+  systemctl restart sshd
+elif grep -q -i "release 6" /etc/redhat-release ; then
+  service sshd restart
+fi
+
