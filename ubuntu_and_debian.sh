@@ -64,3 +64,4 @@ service ssh restart
 
 bash apache-hardening.sh
 bash mysql-hardening.sh
+bash nginx-hardening.sh
