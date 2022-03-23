@@ -1,6 +1,5 @@
 # Install, Configure and Optimize MySQL
 install_secure_mysql(){
-    clear
     echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
     echo -e "\e[93m[+]\e[00m Installing, Configuring and Optimizing MySQL"
     echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
