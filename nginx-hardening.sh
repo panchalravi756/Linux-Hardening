@@ -1,8 +1,5 @@
-##############################################################################################################
 # Install Nginx
-install_nginx(){
-  clear
-  f_banner 
+install_nginx(){ 
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
   echo -e "\e[93m[+]\e[00m Installing NginX Web Server"
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
@@ -12,7 +9,6 @@ install_nginx(){
   curl -O https://nginx.org/keys/nginx_signing.key && apt-key add ./nginx_signing.key
   apt update
   apt install nginx
-  say_done
 }
 
 ##############################################################################################################
@@ -20,8 +16,6 @@ install_nginx(){
 #Compile ModSecurity for NginX
 
 compile_modsec_nginx(){
-  clear
-  f_banner 
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
   echo -e "\e[93m[+]\e[00m Install Prerequisites and Compiling ModSecurity for NginX"
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
@@ -74,18 +68,13 @@ echo "Include /etc/nginx/modsec/owasp-modsecurity-crs/rules/*.conf" >> /etc/ngin
 wget -P /etc/nginx/modsec/ https://github.com/SpiderLabs/ModSecurity/raw/v3/master/unicode.mapping
 cd $jshielder_home
 
-  clear
-  f_banner 
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
   echo -e "\e[93m[+]\e[00m Configuring ModSecurity for NginX"
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
   echo ""
-  spinner
   cp templates/nginx /etc/nginx/nginx.conf
   cp templates/nginx_default /etc/nginx/conf.d/default.conf
   service nginx restart
-  say_done
-
 }
 
 install_nginx
