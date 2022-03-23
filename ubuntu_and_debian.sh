@@ -63,3 +63,4 @@ ufw --force disable
 service ssh restart
 
 bash apache-hardening.sh
+bash mysql-hardening.sh
