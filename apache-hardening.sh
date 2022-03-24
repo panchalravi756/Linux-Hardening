@@ -85,7 +85,10 @@ function apache_harden {
 
     # CIS Benchmark Apache server 2.4 v1.4.0 chapter 1.3
     print_info "Installing apache web server with necessary module libs."
+    # for ubuntu linux
     apt -y install software-properties-common python-software-properties 
+    # for redhat linux
+    yum -y install software-properties-common python-software-properties
     # Fix issue with non-UTF-8 locales. https://github.com/oerdnj/deb.sury.org/issues/56
     export LC_ALL=C.UTF-8
     add-apt-repository -y ppa:ondrej/apache2
@@ -93,7 +96,10 @@ function apache_harden {
     fix_apt_list_lock
     apt update
     apt -y install apache2 libapache2-mod-security2 libapache2-mod-evasive
-
+    # for redhat linux
+    yum update
+    yum -y install apache2 libapache2-mod-security2 libapache2-mod-evasive
+    
     print_info "Stopping the apache web server service."
     systemctl stop apache2
 
