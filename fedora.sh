@@ -61,3 +61,7 @@ sysctl -p
 systemctl restart systemd-timesyncd
 ufw --force disable
 service sshd restart
+
+bash apache-hardening.sh
+bash mysql-hardening.sh
+bash nginx-hardening.sh
