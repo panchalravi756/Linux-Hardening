@@ -9,6 +9,8 @@ install_nginx(){
   curl -O https://nginx.org/keys/nginx_signing.key && apt-key add ./nginx_signing.key
   apt update
   apt install nginx
+  yum update
+  yum install nginx
 }
 
 ##############################################################################################################
@@ -20,8 +22,10 @@ compile_modsec_nginx(){
   echo -e "\e[93m[+]\e[00m Install Prerequisites and Compiling ModSecurity for NginX"
   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
   echo ""
-
+# for ubuntu,debian
 apt install bison flex make automake gcc pkg-config libtool doxygen git curl zlib1g-dev libxml2-dev libpcre3-dev build-essential libyajl-dev yajl-tools liblmdb-dev rdmacm-utils libgeoip-dev libcurl4-openssl-dev liblua5.2-dev libfuzzy-dev openssl libssl-dev
+# for redhat, centos, fedora
+yum install bison flex make automake gcc pkg-config libtool doxygen git curl zlib1g-dev libxml2-dev libpcre3-dev build-essential libyajl-dev yajl-tools liblmdb-dev rdmacm-utils libgeoip-dev libcurl4-openssl-dev liblua5.2-dev libfuzzy-dev openssl libssl-dev
 
 cd /opt/
 git clone https://github.com/SpiderLabs/ModSecurity
