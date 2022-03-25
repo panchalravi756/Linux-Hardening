@@ -10,7 +10,7 @@ install_nginx(){
   apt update
   apt install nginx
   yum update
-  yum install nginx
+  yum install nginx -y
 }
 
 ##############################################################################################################
