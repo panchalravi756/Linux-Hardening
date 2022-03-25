@@ -4,7 +4,7 @@ install_secure_mysql(){
     echo -e "\e[93m[+]\e[00m Installing, Configuring and Optimizing MySQL"
     echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
     echo ""
-    apt install mysql-server
+    # apt install mysql-server
     yum install mysql-server
     echo ""
     echo -n " configuring MySQL............ "
