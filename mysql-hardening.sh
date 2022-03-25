@@ -5,7 +5,7 @@ install_secure_mysql(){
     echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
     echo ""
     # apt install mysql-server
-    yum install mysql-server
+    yum install mysql-server -y
     echo ""
     echo -n " configuring MySQL............ "
     cp templates/mysql /etc/mysql/mysqld.cnf; echo " OK"
